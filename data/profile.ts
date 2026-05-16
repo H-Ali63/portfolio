@@ -6,6 +6,7 @@ export const profile: Profile = {
   roles: [
     "Machine Learning Engineer",
     "Backend Engineer",
+    "AI Engineer",
     "LLM Application Developer",
     "Microservices Builder",
   ],
@@ -13,7 +14,7 @@ export const profile: Profile = {
     "I build LLM-powered backend platforms, real-time systems, and cloud-deployed services that turn product workflows into reliable software.",
   bio:
     "Machine Learning and Backend Engineer with 2+ years building LLM-powered, microservices-based platforms across Node.js, Python, FastAPI, MongoDB, Kafka, AWS, and GCP.",
-  location: "Bhubaneswar, India",
+  location: "Navi Mumbai, India",
   email: "haidar.ali.npg@gmail.com",
   phone: "+91-8200030659",
   avatar: "/assets/profile.jpeg",
