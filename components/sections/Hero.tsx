@@ -12,7 +12,7 @@ import Icon from "@/components/ui/Icon";
 export default function Hero() {
   return (
     <section id="hero" className="relative flex min-h-svh items-center pt-24 sm:pt-28">
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 pb-20 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-8">
+      <div className="mx-auto grid min-w-0 w-full max-w-7xl items-center gap-12 px-4 pb-20 sm:px-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
@@ -22,10 +22,10 @@ export default function Hero() {
             <span className="h-2 w-2 rounded-full bg-accent-mint" />
             <span className="truncate">{profile.availability}</span>
           </div>
-          <h1 className="balanced mt-7 max-w-4xl font-display text-5xl font-semibold leading-[1.05] text-zinc-950 dark:text-white sm:text-6xl lg:text-7xl">
+          <h1 className="premium-heading balanced mt-7 max-w-4xl break-words font-display text-4xl font-semibold leading-[1.05] sm:text-6xl lg:text-7xl">
             {profile.name}
           </h1>
-          <p className="mt-4 text-xl font-semibold text-zinc-700 dark:text-zinc-100 sm:text-2xl">
+          <p className="premium-text mt-4 text-xl font-semibold sm:text-2xl">
             <TypingEffect words={profile.roles} />
           </p>
           <p className="pretty mt-6 max-w-2xl text-lg leading-8 text-muted sm:text-xl">
@@ -33,11 +33,11 @@ export default function Hero() {
           </p>
 
           <div className="mt-6 grid max-w-2xl gap-3 sm:grid-cols-2">
-            <div className="glass flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold text-zinc-800 dark:text-zinc-100">
+            <div className="glass premium-text flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold">
               <Icon name="sparkles" size={18} className="text-accent-mint" />
               Backend, ML, and LLM systems
             </div>
-            <div className="glass flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold text-zinc-800 dark:text-zinc-100">
+            <div className="glass premium-text flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-semibold">
               <Icon name="globe" size={18} className="text-accent-cyan" />
               {profile.location}
             </div>
@@ -71,7 +71,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="relative mx-auto grid w-full max-w-md gap-4 lg:max-w-none"
+          className="relative mx-auto grid w-full max-w-[19rem] gap-4 sm:max-w-sm lg:max-w-[22rem] xl:max-w-sm"
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
@@ -84,7 +84,7 @@ export default function Hero() {
                 fill
                 priority
                 className="object-cover"
-                sizes="(max-width: 1024px) 90vw, 480px"
+                sizes="(max-width: 640px) 304px, (max-width: 1024px) 384px, 384px"
               />
             </div>
           </div>

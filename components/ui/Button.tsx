@@ -7,11 +7,11 @@ type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-zinc-950 text-white shadow-soft hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100",
+    "bg-gradient-to-r from-[#111827] via-[#123b37] to-[#9b6b24] text-white shadow-soft hover:brightness-110 dark:from-white dark:via-[#dff8f1] dark:to-[#f1ce82] dark:text-zinc-950",
   secondary:
-    "border border-zinc-200 bg-white/80 text-zinc-900 hover:border-accent-mint dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10",
+    "border border-accent-amber/35 bg-white/75 text-zinc-900 shadow-sm hover:border-accent-mint hover:bg-white/90 dark:border-accent-mint/20 dark:bg-white/5 dark:text-white dark:hover:bg-white/10",
   ghost:
-    "text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-100 dark:hover:bg-white/10 dark:hover:text-white",
+    "text-zinc-700 hover:bg-white/75 hover:text-zinc-950 dark:text-zinc-100 dark:hover:bg-white/10 dark:hover:text-white",
 };
 
 const sizes: Record<Size, string> = {

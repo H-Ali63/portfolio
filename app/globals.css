@@ -5,24 +5,26 @@
 @layer base {
   :root {
     color-scheme: light;
-    --background: #f7f8fb;
-    --foreground: #172033;
-    --muted: #667085;
-    --panel: rgba(255, 255, 255, 0.82);
-    --panel-border: rgba(15, 23, 42, 0.1);
-    --grid: rgba(15, 23, 42, 0.06);
-    --section-band: rgba(255, 255, 255, 0.55);
+    --background: #f6f8fb;
+    --foreground: #141922;
+    --muted: #586173;
+    --panel: rgba(255, 255, 255, 0.76);
+    --panel-border: rgba(50, 60, 78, 0.14);
+    --grid: rgba(20, 25, 34, 0.045);
+    --section-band: rgba(237, 245, 243, 0.72);
+    --nav-surface: rgba(255, 255, 255, 0.78);
   }
 
   .dark {
     color-scheme: dark;
-    --background: #090d16;
-    --foreground: #f7f8fb;
-    --muted: #a7b0c2;
-    --panel: rgba(17, 21, 34, 0.78);
-    --panel-border: rgba(255, 255, 255, 0.1);
-    --grid: rgba(255, 255, 255, 0.06);
-    --section-band: rgba(255, 255, 255, 0.035);
+    --background: #080a10;
+    --foreground: #f8fafc;
+    --muted: #a9b3c4;
+    --panel: rgba(14, 18, 29, 0.78);
+    --panel-border: rgba(235, 242, 255, 0.12);
+    --grid: rgba(235, 242, 255, 0.052);
+    --section-band: rgba(24, 194, 156, 0.055);
+    --nav-surface: rgba(8, 10, 16, 0.74);
   }
 
   * {
@@ -37,15 +39,24 @@
   body {
     min-height: 100vh;
     background:
-      linear-gradient(115deg, rgba(49, 214, 160, 0.1), transparent 34rem),
-      linear-gradient(250deg, rgba(34, 199, 221, 0.08), transparent 36rem),
-      linear-gradient(180deg, var(--background), var(--background));
+      linear-gradient(118deg, rgba(24, 194, 156, 0.14), transparent 30rem),
+      linear-gradient(246deg, rgba(78, 163, 241, 0.12), transparent 34rem),
+      linear-gradient(0deg, rgba(215, 168, 79, 0.08), transparent 44rem),
+      linear-gradient(180deg, #fbfcff 0%, var(--background) 42%, #eef7f3 100%);
     color: var(--foreground);
     text-rendering: optimizeLegibility;
   }
 
+  .dark body {
+    background:
+      linear-gradient(118deg, rgba(24, 194, 156, 0.16), transparent 30rem),
+      linear-gradient(246deg, rgba(78, 163, 241, 0.12), transparent 34rem),
+      linear-gradient(0deg, rgba(215, 168, 79, 0.075), transparent 44rem),
+      linear-gradient(180deg, #05060a 0%, var(--background) 48%, #0d111b 100%);
+  }
+
   ::selection {
-    background: rgba(49, 214, 160, 0.28);
+    background: rgba(24, 194, 156, 0.28);
   }
 
   button,
@@ -62,15 +73,17 @@
 
 @layer components {
   .site-shell {
+    overflow-x: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
     position: relative;
-    overflow: hidden;
   }
 
   .site-shell::before {
     background-image:
       linear-gradient(var(--grid) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-    background-size: 52px 52px;
+    background-size: 56px 56px;
     content: "";
     inset: 0;
     mask-image: linear-gradient(to bottom, black, transparent 55rem);
@@ -81,8 +94,8 @@
 
   .site-shell::after {
     background:
-      linear-gradient(90deg, transparent, rgba(49, 214, 160, 0.08), transparent),
-      repeating-linear-gradient(135deg, transparent 0 18px, rgba(34, 199, 221, 0.035) 18px 19px);
+      linear-gradient(90deg, transparent, rgba(215, 168, 79, 0.08), rgba(24, 194, 156, 0.055), transparent),
+      repeating-linear-gradient(135deg, transparent 0 20px, rgba(78, 163, 241, 0.036) 20px 21px);
     content: "";
     inset: auto 0 0;
     height: 42rem;
@@ -99,14 +112,39 @@
   .section-band {
     background:
       linear-gradient(180deg, transparent, var(--section-band) 18%, var(--section-band) 82%, transparent),
-      linear-gradient(90deg, transparent, rgba(49, 214, 160, 0.06), transparent);
+      linear-gradient(90deg, transparent, rgba(215, 168, 79, 0.07), rgba(24, 194, 156, 0.055), transparent);
     border-block: 1px solid var(--panel-border);
   }
 
   .glass {
     background: var(--panel);
-    backdrop-filter: blur(18px);
+    backdrop-filter: blur(20px) saturate(1.18);
     border: 1px solid var(--panel-border);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  }
+
+  .premium-heading {
+    background: linear-gradient(112deg, var(--foreground) 0%, #253247 34%, #0f9b82 66%, #a77422 100%);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .dark .premium-heading {
+    background: linear-gradient(112deg, #ffffff 0%, #d8e6ff 32%, #74ead2 66%, #f2cf84 100%);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .premium-text {
+    color: #253247;
+  }
+
+  .dark .premium-text {
+    color: #e9efff;
   }
 
   .focus-ring {

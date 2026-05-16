@@ -113,21 +113,21 @@ export default function Navbar() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition",
         scrolled
-          ? "border-b border-zinc-200/70 bg-white/78 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/72"
+          ? "border-b border-accent-amber/20 bg-[var(--nav-surface)] backdrop-blur-xl dark:border-white/10"
           : "bg-transparent",
       )}
     >
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#hero" className="focus-ring flex items-center gap-3 rounded-full" onClick={(event) => handleNavClick("hero", event)}>
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-zinc-950 text-sm font-semibold text-white shadow-glow dark:bg-white dark:text-zinc-950">
+      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+        <a href="#hero" className="focus-ring flex min-w-0 items-center gap-3 rounded-full" onClick={(event) => handleNavClick("hero", event)}>
+          <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-[#111827] via-[#123b37] to-[#9b6b24] text-sm font-semibold text-white shadow-glow dark:from-white dark:via-[#dff8f1] dark:to-[#f1ce82] dark:text-zinc-950">
             {initials}
           </span>
-          <span className="hidden font-display text-sm font-semibold text-zinc-950 dark:text-white sm:inline">
+          <span className="premium-text hidden truncate font-display text-sm font-semibold sm:inline">
             {profile.name}
           </span>
         </a>
 
-        <div className="hidden items-center gap-1 rounded-full border border-zinc-200/70 bg-white/70 p-1 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 lg:flex">
+        <div className="hidden items-center gap-1 rounded-full border border-accent-amber/20 bg-white/70 p-1 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 xl:flex">
           {navItems.map((item) => (
             <a
               key={item.id}
@@ -136,7 +136,7 @@ export default function Navbar() {
               className={cn(
                 "focus-ring rounded-full px-3 py-2 text-sm font-medium transition",
                 activeId === item.id
-                  ? "bg-zinc-950 text-white shadow-sm dark:bg-white dark:text-zinc-950"
+                  ? "bg-gradient-to-r from-[#111827] via-[#123b37] to-[#9b6b24] text-white shadow-sm dark:from-white dark:via-[#dff8f1] dark:to-[#f1ce82] dark:text-zinc-950"
                   : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-200 dark:hover:bg-white/10 dark:hover:text-white",
               )}
               onClick={(event) => handleNavClick(item.id, event)}
@@ -150,7 +150,7 @@ export default function Navbar() {
           <a
             href={profile.resume}
             download
-            className="focus-ring hidden items-center gap-2 rounded-full border border-zinc-200/70 bg-white/75 px-4 py-2 text-sm font-semibold text-zinc-800 shadow-sm transition hover:border-accent-mint hover:text-zinc-950 dark:border-white/10 dark:bg-white/5 dark:text-zinc-100 dark:hover:text-white sm:inline-flex"
+            className="focus-ring hidden items-center gap-2 rounded-full border border-accent-amber/30 bg-white/75 px-4 py-2 text-sm font-semibold text-[#253247] shadow-sm transition hover:border-accent-mint hover:text-zinc-950 dark:border-white/10 dark:bg-white/5 dark:text-zinc-100 dark:hover:text-white sm:inline-flex"
           >
             <Download size={16} />
             Resume
@@ -159,7 +159,8 @@ export default function Navbar() {
           <button
             type="button"
             aria-label="Open navigation menu"
-            className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200/70 bg-white/75 text-zinc-800 shadow-sm transition dark:border-white/10 dark:bg-white/5 dark:text-white lg:hidden"
+            aria-expanded={open}
+            className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full border border-accent-amber/30 bg-white/75 text-[#253247] shadow-sm transition dark:border-white/10 dark:bg-white/5 dark:text-white xl:hidden"
             onClick={() => setOpen(true)}
           >
             <Menu size={20} />
@@ -170,13 +171,13 @@ export default function Navbar() {
       <AnimatePresence>
         {open ? (
           <motion.div
-            className="fixed inset-0 z-50 bg-zinc-950/70 backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-50 bg-zinc-950/70 backdrop-blur-sm xl:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="ml-auto flex h-full w-full max-w-sm flex-col border-l border-white/10 bg-white p-5 shadow-soft dark:bg-zinc-950"
+              className="ml-auto flex h-full max-h-dvh w-full max-w-sm flex-col overflow-y-auto border-l border-accent-amber/20 bg-white p-5 shadow-soft dark:border-white/10 dark:bg-zinc-950"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -202,7 +203,7 @@ export default function Navbar() {
                     className={cn(
                       "focus-ring rounded-lg px-4 py-3 text-base font-semibold transition",
                       activeId === item.id
-                        ? "bg-zinc-950 text-white dark:bg-white dark:text-zinc-950"
+                        ? "bg-gradient-to-r from-[#111827] via-[#123b37] to-[#9b6b24] text-white dark:from-white dark:via-[#dff8f1] dark:to-[#f1ce82] dark:text-zinc-950"
                         : "text-zinc-700 hover:bg-zinc-100 dark:text-zinc-100 dark:hover:bg-white/10",
                     )}
                     onClick={(event) => handleNavClick(item.id, event)}
@@ -214,7 +215,7 @@ export default function Navbar() {
               <a
                 href={profile.resume}
                 download
-                className="focus-ring mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 dark:bg-white dark:text-zinc-950"
+                className="focus-ring mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#111827] via-[#123b37] to-[#9b6b24] px-5 py-3 text-sm font-semibold text-white transition hover:brightness-110 dark:from-white dark:via-[#dff8f1] dark:to-[#f1ce82] dark:text-zinc-950"
               >
                 <Download size={16} />
                 Download resume

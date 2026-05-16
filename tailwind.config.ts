@@ -29,14 +29,15 @@ const config: Config = {
         ],
       },
       boxShadow: {
-        soft: "0 20px 70px rgba(15, 23, 42, 0.12)",
-        glow: "0 0 0 1px rgba(255,255,255,0.08), 0 18px 60px rgba(34,197,221,0.14)",
+        soft: "0 22px 70px rgba(19, 24, 35, 0.14)",
+        glow: "0 0 0 1px rgba(255,255,255,0.12), 0 18px 60px rgba(24,194,156,0.18)",
       },
       colors: {
         accent: {
-          mint: "#31d6a0",
-          cyan: "#22c7dd",
-          amber: "#f6b94b",
+          mint: "#18c29c",
+          cyan: "#4ea3f1",
+          amber: "#d7a84f",
+          rose: "#df6f82",
         },
       },
     },
