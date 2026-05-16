@@ -89,6 +89,19 @@ export default function Navbar() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   const scrollToSectionContent = (id: string) => {
     const section = document.getElementById(id);
     if (!section) return;
@@ -109,92 +122,99 @@ export default function Navbar() {
   };
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition",
-        scrolled
-          ? "border-b border-accent-amber/20 bg-[var(--nav-surface)] backdrop-blur-xl dark:border-white/10"
-          : "bg-transparent",
-      )}
-    >
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
-        <a href="#hero" className="focus-ring flex min-w-0 items-center gap-3 rounded-full" onClick={(event) => handleNavClick("hero", event)}>
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-[#111827] via-[#123b37] to-[#9b6b24] text-sm font-semibold text-white shadow-glow dark:from-white dark:via-[#dff8f1] dark:to-[#f1ce82] dark:text-zinc-950">
-            {initials}
-          </span>
-          <span className="premium-text hidden truncate font-display text-sm font-semibold sm:inline">
-            {profile.name}
-          </span>
-        </a>
-
-        <div className="hidden items-center gap-1 rounded-full border border-accent-amber/20 bg-white/70 p-1 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 xl:flex">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              aria-current={activeId === item.id ? "page" : undefined}
-              className={cn(
-                "focus-ring rounded-full px-3 py-2 text-sm font-medium transition",
-                activeId === item.id
-                  ? "bg-gradient-to-r from-[#111827] via-[#123b37] to-[#9b6b24] text-white shadow-sm dark:from-white dark:via-[#dff8f1] dark:to-[#f1ce82] dark:text-zinc-950"
-                  : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-200 dark:hover:bg-white/10 dark:hover:text-white",
-              )}
-              onClick={(event) => handleNavClick(item.id, event)}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-2">
-          <a
-            href={profile.resume}
-            download
-            className="focus-ring hidden items-center gap-2 rounded-full border border-accent-amber/30 bg-white/75 px-4 py-2 text-sm font-semibold text-[#253247] shadow-sm transition hover:border-accent-mint hover:text-zinc-950 dark:border-white/10 dark:bg-white/5 dark:text-zinc-100 dark:hover:text-white sm:inline-flex"
-          >
-            <Download size={16} />
-            Resume
+    <>
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-[80] border-b border-accent-amber/20 bg-[var(--nav-surface)] shadow-sm backdrop-blur-xl transition dark:border-white/10",
+          scrolled
+            ? "xl:border-accent-amber/20 xl:bg-[var(--nav-surface)] xl:shadow-sm dark:xl:border-white/10"
+            : "xl:border-transparent xl:bg-transparent xl:shadow-none",
+        )}
+      >
+        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+          <a href="#hero" className="focus-ring flex min-w-0 items-center gap-3 rounded-full" onClick={(event) => handleNavClick("hero", event)}>
+            <span className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-[#111827] via-[#123b37] to-[#9b6b24] text-sm font-semibold text-white shadow-glow dark:from-white dark:via-[#dff8f1] dark:to-[#f1ce82] dark:text-zinc-950">
+              {initials}
+            </span>
+            <span className="premium-text hidden truncate font-display text-sm font-semibold sm:inline">
+              {profile.name}
+            </span>
           </a>
-          <ThemeToggle />
-          <button
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded={open}
-            className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full border border-accent-amber/30 bg-white/75 text-[#253247] shadow-sm transition dark:border-white/10 dark:bg-white/5 dark:text-white xl:hidden"
-            onClick={() => setOpen(true)}
-          >
-            <Menu size={20} />
-          </button>
-        </div>
-      </nav>
+
+          <div className="hidden items-center gap-1 rounded-full border border-accent-amber/20 bg-white/70 p-1 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 xl:flex">
+            {navItems.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                aria-current={activeId === item.id ? "page" : undefined}
+                className={cn(
+                  "focus-ring rounded-full px-3 py-2 text-sm font-medium transition",
+                  activeId === item.id
+                    ? "bg-gradient-to-r from-[#111827] via-[#123b37] to-[#9b6b24] text-white shadow-sm dark:from-white dark:via-[#dff8f1] dark:to-[#f1ce82] dark:text-zinc-950"
+                    : "text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-200 dark:hover:bg-white/10 dark:hover:text-white",
+                )}
+                onClick={(event) => handleNavClick(item.id, event)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+
+          <div className="flex shrink-0 items-center gap-2">
+            <a
+              href={profile.resume}
+              download
+              className="focus-ring hidden items-center gap-2 rounded-full border border-accent-amber/30 bg-white/75 px-4 py-2 text-sm font-semibold text-[#253247] shadow-sm transition hover:border-accent-mint hover:text-zinc-950 dark:border-white/10 dark:bg-white/5 dark:text-zinc-100 dark:hover:text-white md:inline-flex"
+            >
+              <Download size={16} />
+              Resume
+            </a>
+            <ThemeToggle />
+            <button
+              type="button"
+              aria-label="Open navigation menu"
+              aria-controls="mobile-navigation"
+              aria-expanded={open}
+              className="focus-ring inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-accent-amber/40 bg-white text-[#253247] shadow-soft transition hover:border-accent-mint hover:text-zinc-950 dark:border-white/15 dark:bg-zinc-900/95 dark:text-white dark:hover:bg-zinc-800 xl:hidden"
+              onClick={() => setOpen(true)}
+            >
+              <Menu size={20} />
+            </button>
+          </div>
+        </nav>
+      </header>
 
       <AnimatePresence>
         {open ? (
           <motion.div
-            className="fixed inset-0 z-50 bg-zinc-950/70 backdrop-blur-sm xl:hidden"
+            className="fixed inset-0 z-[100] bg-zinc-950/70 backdrop-blur-sm xl:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="ml-auto flex h-full max-h-dvh w-full max-w-sm flex-col overflow-y-auto border-l border-accent-amber/20 bg-white p-5 shadow-soft dark:border-white/10 dark:bg-zinc-950"
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "spring", damping: 28, stiffness: 260 }}
+              id="mobile-navigation"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Site navigation"
+              className="flex h-dvh w-full flex-col overflow-y-auto bg-white p-5 shadow-soft dark:bg-zinc-950"
+              initial={{ y: 18, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 18, opacity: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
             >
               <div className="flex items-center justify-between">
-                <span className="font-display text-lg font-semibold">{profile.name}</span>
+                <span className="premium-heading font-display text-xl font-semibold">{profile.name}</span>
                 <button
                   type="button"
                   aria-label="Close navigation menu"
-                  className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 dark:border-white/10"
+                  className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full border border-accent-amber/30 bg-white text-[#253247] shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-white"
                   onClick={() => setOpen(false)}
                 >
                   <X size={20} />
                 </button>
               </div>
-              <div className="mt-10 flex flex-col gap-2">
+              <div className="mt-8 grid gap-3">
                 {navItems.map((item) => (
                   <a
                     key={item.id}
@@ -215,7 +235,7 @@ export default function Navbar() {
               <a
                 href={profile.resume}
                 download
-                className="focus-ring mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#111827] via-[#123b37] to-[#9b6b24] px-5 py-3 text-sm font-semibold text-white transition hover:brightness-110 dark:from-white dark:via-[#dff8f1] dark:to-[#f1ce82] dark:text-zinc-950"
+                className="focus-ring mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#111827] via-[#123b37] to-[#9b6b24] px-5 py-3 text-sm font-semibold text-white transition hover:brightness-110 dark:from-white dark:via-[#dff8f1] dark:to-[#f1ce82] dark:text-zinc-950"
               >
                 <Download size={16} />
                 Download resume
@@ -224,6 +244,6 @@ export default function Navbar() {
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
