@@ -1,0 +1,13 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#090D16"/>
+  <rect x="96" y="70" width="1008" height="490" rx="40" fill="#111827" stroke="#263244" stroke-width="2"/>
+  <text x="150" y="235" fill="#F7F8FB" font-family="Arial, sans-serif" font-size="72" font-weight="700">Md Haidar Ali</text>
+  <text x="150" y="315" fill="#31D6A0" font-family="Arial, sans-serif" font-size="42" font-weight="700">Machine Learning + Backend Engineer</text>
+  <text x="150" y="390" fill="#A7B0C2" font-family="Arial, sans-serif" font-size="28">LLM microservices, healthcare NLP, and real-time systems.</text>
+  <rect x="150" y="448" width="188" height="48" rx="24" fill="#31D6A0"/>
+  <text x="180" y="481" fill="#08111F" font-family="Arial, sans-serif" font-size="20" font-weight="700">Portfolio</text>
+  <circle cx="915" cy="300" r="126" fill="#172033" stroke="#31D6A0" stroke-width="6"/>
+  <path d="M842 336C858 392 888 420 915 420C942 420 972 392 988 336C976 312 950 296 915 296C880 296 854 312 842 336Z" fill="#22C7DD"/>
+  <circle cx="915" cy="242" r="62" fill="#DDE7F3"/>
+  <path d="M856 245C864 196 888 172 916 172C954 172 976 203 976 246C950 232 928 226 908 226C886 226 870 232 856 245Z" fill="#202535"/>
+</svg>

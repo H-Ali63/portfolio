@@ -1,0 +1,38 @@
+<svg width="960" height="1200" viewBox="0 0 960 1200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Backend and AI engineer profile artwork</title>
+  <desc id="desc">A modern portrait-style graphic with code panels and neural nodes.</desc>
+  <rect width="960" height="1200" fill="#0B1020"/>
+  <path d="M0 0H960V1200H0V0Z" fill="url(#bg)"/>
+  <rect x="120" y="120" width="720" height="960" rx="42" fill="#111827" stroke="url(#edge)" stroke-width="2"/>
+  <path d="M210 232H750" stroke="#263244" stroke-width="2"/>
+  <circle cx="250" cy="190" r="14" fill="#31D6A0"/>
+  <circle cx="292" cy="190" r="14" fill="#22C7DD"/>
+  <circle cx="334" cy="190" r="14" fill="#F6B94B"/>
+  <rect x="210" y="278" width="264" height="28" rx="14" fill="#31D6A0"/>
+  <rect x="210" y="330" width="420" height="18" rx="9" fill="#E5E7EB" fill-opacity="0.16"/>
+  <rect x="210" y="370" width="360" height="18" rx="9" fill="#E5E7EB" fill-opacity="0.11"/>
+  <rect x="210" y="410" width="440" height="18" rx="9" fill="#E5E7EB" fill-opacity="0.14"/>
+  <circle cx="486" cy="650" r="164" fill="#172033"/>
+  <path d="M390 660C410 742 454 786 486 786C518 786 562 742 582 660C570 630 535 607 486 607C437 607 402 630 390 660Z" fill="#31D6A0"/>
+  <circle cx="486" cy="532" r="96" fill="#DDE7F3"/>
+  <path d="M390 535C403 459 439 418 488 418C545 418 585 463 586 536C548 516 513 507 480 507C446 507 416 516 390 535Z" fill="#202535"/>
+  <path d="M322 848C346 780 404 736 486 736C568 736 626 780 650 848H322Z" fill="#22C7DD" fill-opacity="0.75"/>
+  <path d="M654 380L722 448L654 516" stroke="#31D6A0" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M306 380L238 448L306 516" stroke="#22C7DD" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="684" cy="708" r="10" fill="#31D6A0"/>
+  <circle cx="724" cy="758" r="10" fill="#22C7DD"/>
+  <circle cx="650" cy="790" r="10" fill="#F6B94B"/>
+  <path d="M684 708L724 758L650 790L684 708Z" stroke="#E5E7EB" stroke-opacity="0.18" stroke-width="4"/>
+  <defs>
+    <radialGradient id="bg" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(254 180) rotate(54.85) scale(1000 797)">
+      <stop stop-color="#1B5F5B"/>
+      <stop offset="0.45" stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#060914"/>
+    </radialGradient>
+    <linearGradient id="edge" x1="120" y1="120" x2="840" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#31D6A0"/>
+      <stop offset="0.5" stop-color="#22C7DD"/>
+      <stop offset="1" stop-color="#F6B94B"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --background: #f7f8fb;
+    --foreground: #172033;
+    --muted: #667085;
+    --panel: rgba(255, 255, 255, 0.82);
+    --panel-border: rgba(15, 23, 42, 0.1);
+    --grid: rgba(15, 23, 42, 0.06);
+    --section-band: rgba(255, 255, 255, 0.55);
+  }
+
+  .dark {
+    color-scheme: dark;
+    --background: #090d16;
+    --foreground: #f7f8fb;
+    --muted: #a7b0c2;
+    --panel: rgba(17, 21, 34, 0.78);
+    --panel-border: rgba(255, 255, 255, 0.1);
+    --grid: rgba(255, 255, 255, 0.06);
+    --section-band: rgba(255, 255, 255, 0.035);
+  }
+
+  * {
+    border-color: var(--panel-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      linear-gradient(115deg, rgba(49, 214, 160, 0.1), transparent 34rem),
+      linear-gradient(250deg, rgba(34, 199, 221, 0.08), transparent 36rem),
+      linear-gradient(180deg, var(--background), var(--background));
+    color: var(--foreground);
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgba(49, 214, 160, 0.28);
+  }
+
+  button,
+  a,
+  input,
+  textarea {
+    outline-offset: 4px;
+  }
+
+  section {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+@layer components {
+  .site-shell {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .site-shell::before {
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 52px 52px;
+    content: "";
+    inset: 0;
+    mask-image: linear-gradient(to bottom, black, transparent 55rem);
+    pointer-events: none;
+    position: fixed;
+    z-index: -1;
+  }
+
+  .site-shell::after {
+    background:
+      linear-gradient(90deg, transparent, rgba(49, 214, 160, 0.08), transparent),
+      repeating-linear-gradient(135deg, transparent 0 18px, rgba(34, 199, 221, 0.035) 18px 19px);
+    content: "";
+    inset: auto 0 0;
+    height: 42rem;
+    pointer-events: none;
+    position: fixed;
+    transform: translateY(25%);
+    z-index: -1;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  .section-band {
+    background:
+      linear-gradient(180deg, transparent, var(--section-band) 18%, var(--section-band) 82%, transparent),
+      linear-gradient(90deg, transparent, rgba(49, 214, 160, 0.06), transparent);
+    border-block: 1px solid var(--panel-border);
+  }
+
+  .glass {
+    background: var(--panel);
+    backdrop-filter: blur(18px);
+    border: 1px solid var(--panel-border);
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent-mint;
+  }
+
+  .text-muted {
+    color: var(--muted);
+  }
+
+  .balanced {
+    text-wrap: balance;
+  }
+
+  .pretty {
+    text-wrap: pretty;
+  }
+
+  .lift-card {
+    @apply shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-soft;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
