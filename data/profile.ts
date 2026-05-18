@@ -65,13 +65,13 @@ export const profile: Profile = {
     experienceOverview:
       "Across food delivery and healthcare platforms, I have delivered Node.js, Python, FastAPI, MongoDB, Kafka, Docker, Kubernetes, AWS, and GCP systems from implementation through deployment.",
     careerGoals: [
-      "Build AI-backed products that are useful, measurable, and practical to operate.",
-      "Own backend systems where security, scalability, and developer experience all matter.",
-      "Turn ML prototypes and prompt workflows into services teams can trust in production.",
+      "Build AI-backed products that are useful, measurable, and practical to operate",
+      "Own backend systems where security, scalability, and developer experience all matter",
+      "Turn ML prototypes and prompt workflows into services teams can trust in production",
     ],
   },
   contact: {
-    headline: "Let us build reliable AI-backed systems.",
+    headline: "Let us build reliable AI-backed systems together.",
     description:
       "For backend engineering, machine learning, LLM integration, or cloud API roles, send a note and I will reply with context.",
     formEndpoint: "",
