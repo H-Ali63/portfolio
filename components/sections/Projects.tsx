@@ -40,7 +40,7 @@ export default function Projects() {
             title="Selected builds with measurable product and platform impact."
             description="Cards, images, descriptions, links, and tech stacks are driven by the projects data file."
           />
-          <div className="no-scrollbar flex w-full gap-2 overflow-x-auto rounded-full border border-zinc-200 bg-white/70 p-1 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 lg:w-auto lg:justify-end" role="list" aria-label="Project filters">
+          <div className="no-scrollbar flex w-full min-w-0 gap-2 overflow-x-auto rounded-full border border-zinc-200 bg-white/70 p-1 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5 lg:w-auto lg:justify-end" role="list" aria-label="Project filters">
             {categories.map((category) => (
               <button
                 key={category}

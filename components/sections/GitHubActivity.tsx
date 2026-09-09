@@ -89,7 +89,7 @@ export default function GitHubActivity() {
               </div>
               <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs font-medium text-muted">
                 <span>12 week activity snapshot</span>
-                <div className="flex items-center gap-1.5">
+                <div className="flex flex-wrap items-center justify-end gap-1.5">
                   <span>Less</span>
                   {intensityClasses.map((className, index) => (
                     <span key={className} className={cn("h-3 w-3 rounded-[3px]", intensityClasses[index])} />

@@ -28,7 +28,14 @@
   }
 
   * {
+    box-sizing: border-box;
     border-color: var(--panel-border);
+  }
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   html {
@@ -44,7 +51,21 @@
       linear-gradient(0deg, rgba(215, 168, 79, 0.08), transparent 44rem),
       linear-gradient(180deg, #fbfcff 0%, var(--background) 42%, #eef7f3 100%);
     color: var(--foreground);
+    overflow-wrap: anywhere;
     text-rendering: optimizeLegibility;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+  }
+
+  input,
+  textarea,
+  button {
+    max-width: 100%;
   }
 
   .dark body {
@@ -189,5 +210,21 @@
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 639px) {
+  section {
+    scroll-margin-top: 4.5rem;
+  }
+
+  .section-padding {
+    @apply py-16;
+  }
+}
+
+@media (max-width: 379px) {
+  .section-padding {
+    @apply py-14;
   }
 }
