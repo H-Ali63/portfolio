@@ -17,7 +17,7 @@ export const profile: Profile = {
   location: "Navi Mumbai, India",
   email: "haidar.ali.npg@gmail.com",
   phone: "+91-8200030659",
-  avatar: "/assets/profile.jpeg",
+  avatar: "/assets/image_port.png",
   resume: "/assets/resume.pdf",
   availability: "Open to Software Development, Machine Learning, Backend, and Applied AI roles",
   sectionOrder: [

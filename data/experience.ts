@@ -2,9 +2,24 @@ import type { Experience } from "@/types";
 
 export const experience: Experience[] = [
   {
+    company: "AXIS MY INDIA LIMITED",
+    role: "Python Development Engineer",
+    duration: "Jun 2026 - Present",
+    location: "Andheri East - Mumbai, India",
+    summary:
+      "AI pipeline architecture + backend reliability engineering for a 100%-coverage survey audit system on GCP.",
+    responsibilities: [
+      "Developed and maintained scalable backend systems for web applications.",
+      "Implemented RESTful APIs for efficient data exchange between frontend and backend services.",
+      "Contributed to a cloud kitchen and restaurant food delivery application that increased user engagement by 50%.",
+      "Integrated analytics and machine learning microservices into backend APIs to improve automation and product intelligence.",
+    ],
+    techStack: ["JavaScript", "Node.js", "Express.js", "MongoDB", "RESTful API", "Flask"],
+  },
+  {
     company: "CTSS TECHNOLOGIES Private Limited",
     role: "Software Development Engineer",
-    duration: "Jan 2024 - Present",
+    duration: "Jan 2024 - Jun 2026",
     location: "Bhubaneswar, India",
     summary:
       "Developing scalable backend systems for web applications, cloud kitchen workflows, and AI-enabled product intelligence.",
