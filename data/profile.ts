@@ -37,7 +37,7 @@ export const profile: Profile = {
     "contact",
   ],
   metrics: [
-    { label: "Years of experience", value: "2+" },
+    { label: "Years of experience", value: "2.5+" },
     { label: "Services architected", value: "20+" },
     { label: "Engagement lift", value: "50%" },
     { label: "Cloud platforms", value: "AWS/GCP" },

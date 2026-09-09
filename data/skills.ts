@@ -64,7 +64,7 @@ export const skills: SkillCategory[] = [
   {
     id: "architecture",
     title: "Architecture",
-    icon: "layers",
+    icon: "network",
     summary: "System design patterns for dependable, secure, and maintainable platforms.",
     skills: [
       { name: "Microservices", level: 88, keywords: ["service discovery", "scalability"] },
