@@ -14,7 +14,7 @@ export const profile: Profile = {
     "I build LLM-powered backend platforms, real-time systems, and cloud-deployed services that turn product workflows into reliable software.",
   bio:
     "Backend & AI/ML Engineer with 2.5+ years building LLM-powered microservices on AWS, GCP, and Oracle Cloud using Python, Node.js, and Docker/Kubernetes.",
-  location: "Navi Mumbai, India",
+  location: "Andheri East, Mumbai, India",
   email: "haidar.ali.npg@gmail.com",
   phone: "+91-8200030659",
   avatar: "/assets/image_port.png",
