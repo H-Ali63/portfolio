@@ -19,7 +19,7 @@ export const profile: Profile = {
   phone: "+91-8200030659",
   avatar: "/assets/image_port.png",
   resume: "/assets/resume.pdf",
-  availability: "Open to Software Development, Machine Learning, Backend, and Applied AI roles",
+  availability: "Open to Software Development, Python Development, Machine Learning, Backend, and Applied AI roles",
   impactPoints: [
     "50% user-engagement lift on a food-delivery platform",
     "40% less manual content-review time with LLM summarization",
