@@ -2,24 +2,29 @@ import type { Profile } from "@/types";
 
 export const profile: Profile = {
   name: "Md Haidar Ali",
-  title: "Machine Learning and Backend Engineer",
+  title: "Backend & AI/ML Engineer",
   roles: [
-    "Machine Learning Engineer",
     "Backend Engineer",
-    "AI Engineer",
+    "Machine Learning Engineer",
+    "Applied AI Engineer",
     "LLM Application Developer",
-    "Microservices Builder",
+    "Microservices Architect",
   ],
   intro:
     "I build LLM-powered backend platforms, real-time systems, and cloud-deployed services that turn product workflows into reliable software.",
   bio:
-    "Machine Learning and Backend Engineer with 2+ years building LLM-powered, microservices-based platforms across Node.js, Python, FastAPI, MongoDB, Kafka, AWS, and GCP.",
+    "Backend & AI/ML Engineer with 2.5+ years building LLM-powered microservices on AWS, GCP, and Oracle Cloud using Python, Node.js, and Docker/Kubernetes.",
   location: "Navi Mumbai, India",
   email: "haidar.ali.npg@gmail.com",
   phone: "+91-8200030659",
   avatar: "/assets/image_port.png",
   resume: "/assets/resume.pdf",
   availability: "Open to Software Development, Machine Learning, Backend, and Applied AI roles",
+  impactPoints: [
+    "50% user-engagement lift on a food-delivery platform",
+    "40% less manual content-review time with LLM summarization",
+    "35% lower LLM hallucination rates with output validation",
+  ],
   sectionOrder: [
     "hero",
     "about",

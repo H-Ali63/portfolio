@@ -37,6 +37,7 @@ export type Profile = {
   avatar: string;
   resume: string;
   availability: string;
+  impactPoints: string[];
   sectionOrder: SectionId[];
   metrics: Metric[];
   seo: {
